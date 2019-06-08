@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="customer1" class="Customer">
+<property name="AccountId" value="100001"/>
+<property name="CustName" value="lakhan singh"/>
+</bean>
+<bean id="customer2" class="Customer">
+<property name="AccountId" value="100002"/>
+<property name="CustName" value="kumar singh"/>
+</bean>
+<bean id="bank" class="Bank">
+<property name="bankId" value="19901"/>
+<property name="name" value="SBI"/>
+<property name="customer">
+<list>
+<ref bean="customer1"/>
+<ref bean="customer2"/>
+</list>
+</property>
+</bean>
+</beans>
